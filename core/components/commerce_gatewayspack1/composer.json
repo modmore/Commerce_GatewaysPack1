@@ -1,0 +1,15 @@
+{
+    "require": {
+        "php": ">=5.5.0",
+        "nilvola/omnipay-adyen": "^1.3"
+    },
+    "replace": {
+        "symfony/event-dispatcher": "~2.7",
+        "omnipay/common": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "modmore\\Commerce\\GatewaysPack1\\" : "src/"
+        }
+    }
+}

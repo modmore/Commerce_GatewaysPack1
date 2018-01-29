@@ -1,0 +1,85 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "e0601e618b0ec02333013ceef7efb1fb",
+    "content-hash": "a7ee30c7f7a1cbda3e0e3a139e211561",
+    "packages": [
+        {
+            "name": "nilvola/omnipay-adyen",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MujibAzizi/omnipay-adyen.git",
+                "reference": "af1db919ff5d45c9634c4540620afb06a5e9dbfa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MujibAzizi/omnipay-adyen/zipball/af1db919ff5d45c9634c4540620afb06a5e9dbfa",
+                "reference": "af1db919ff5d45c9634c4540620afb06a5e9dbfa",
+                "shasum": ""
+            },
+            "require": {
+                "omnipay/common": "~2.0"
+            },
+            "require-dev": {
+                "omnipay/tests": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Omnipay\\Adyen\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adrian Macneil",
+                    "email": "adrian@adrianmacneil.com"
+                },
+                {
+                    "name": "Omnipay Contributors",
+                    "homepage": "https://github.com/titlextechnology/omnipay-adyen/contributors"
+                },
+                {
+                    "name": "PeoplePerHour",
+                    "homepage": "http://www.peopleperhour.com"
+                },
+                {
+                    "name": "Mujib Azizi",
+                    "email": "mujib@nilvola.nl"
+                },
+                {
+                    "name": "Mark Kremer",
+                    "email": "mail@markkremer.nl"
+                }
+            ],
+            "description": "Adyen driver for the Omnipay payment processing library",
+            "homepage": "https://github.com/MujibAzizi/omnipay-adyen",
+            "keywords": [
+                "adyen",
+                "gateway",
+                "merchant",
+                "omnipay",
+                "pay",
+                "payment"
+            ],
+            "time": "2015-10-20 10:04:54"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.5.0"
+    },
+    "platform-dev": []
+}
