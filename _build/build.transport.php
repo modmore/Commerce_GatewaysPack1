@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @param string $filename The name of the file.
  * @return string The file's content
@@ -65,9 +64,39 @@ $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
 $builder->directory = $targetDirectory;
 $builder->createPackage(PKG_NAMESPACE,PKG_VERSION,PKG_RELEASE);
-$builder->registerNamespace(PKG_NAMESPACE,false,true,'{core_path}components/'.PKG_NAMESPACE.'/', '{assets_path}components/'.PKG_NAMESPACE.'/');
 
-$modx->log(modX::LOG_LEVEL_INFO,'Packaged in namespace.'); flush();
+/** @var modNamespace $namespace */
+$namespace = $modx->newObject('modNamespace');
+$namespace->set('name', PKG_NAMESPACE);
+$namespace->set('path', '{core_path}components/'.PKG_NAMESPACE.'/');
+$namespace->set('assets_path', '{assets_path}components/'.PKG_NAMESPACE.'/');
+
+/* define some basic attributes */
+$attributes = array (
+    xPDOTransport::UNIQUE_KEY => 'name',
+    xPDOTransport::PRESERVE_KEYS => true,
+    xPDOTransport::UPDATE_OBJECT => true,
+    xPDOTransport::RESOLVE_FILES => true,
+    xPDOTransport::RESOLVE_PHP => true,
+);
+/** @var modTransportVehicle $vehicle */
+$vehicle = $builder->createVehicle($namespace, $attributes);
+
+// Add the validator to check server requirements
+$vehicle->validate('php', array('source' => $sources['validators'] . 'requirements.script.php'));
+
+//$vehicle->resolve('file',array(
+//    'source' => $sources['source_assets'],
+//    'target' => "return MODX_ASSETS_PATH . 'components/';",
+//));
+$vehicle->resolve('file',array(
+    'source' => $sources['source_core'],
+    'target' => "return MODX_CORE_PATH . 'components/';",
+));
+$vehicle->resolve('php',array(
+    'source' => $sources['resolvers'] . 'loadmodules.resolver.php',
+));
+$builder->putVehicle($vehicle);
 
 /* Settings */
 $settings = include $sources['data'].'transport.settings.php';
@@ -85,21 +114,6 @@ if (is_array($settings)) {
     unset($settings,$setting,$attributes);
 }
 
-// Add the validator to check server requirements
-$vehicle->validate('php', array('source' => $sources['validators'] . 'requirements.script.php'));
-
-//$vehicle->resolve('file',array(
-//    'source' => $sources['source_assets'],
-//    'target' => "return MODX_ASSETS_PATH . 'components/';",
-//));
-$vehicle->resolve('file',array(
-    'source' => $sources['source_core'],
-    'target' => "return MODX_CORE_PATH . 'components/';",
-));
-$vehicle->resolve('php',array(
-    'source' => $sources['resolvers'] . 'loadmodules.resolver.php',
-));
-$builder->putVehicle($vehicle);
 
 $modx->log(modX::LOG_LEVEL_INFO,'Packaged in resolvers.'); flush();
 
