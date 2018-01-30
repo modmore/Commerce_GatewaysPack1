@@ -33,10 +33,10 @@ class GatewaysPack1 extends BaseModule {
         $this->adapter->loadLexicon('commerce_gatewayspack1:default');
 
         // Add template path to twig
-        /** @var ChainLoader $loader */
-        $root = dirname(dirname(__DIR__));
-        $loader = $this->commerce->twig->getLoader();
-        $loader->addLoader(new FilesystemLoader($root . '/templates/'));
+//        /** @var ChainLoader $loader */
+//        $root = dirname(dirname(__DIR__));
+//        $loader = $this->commerce->twig->getLoader();
+//        $loader->addLoader(new FilesystemLoader($root . '/templates/'));
 
         $dispatcher->addListener(\Commerce::EVENT_GET_PAYMENT_GATEWAYS, [$this, 'registerGateways']);
     }
