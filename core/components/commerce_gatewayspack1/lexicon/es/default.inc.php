@@ -1,14 +1,14 @@
 <?php
 
-$_lang['commerce_gatewayspack1'] = 'GatewaysPack1';
-$_lang['commerce_gatewayspack1.description'] = 'Adds additional payment gateways.';
+$_lang['commerce_gatewayspack1'] = 'Sistema de Conexion por Puerta de Salida y Entrada';
+$_lang['commerce_gatewayspack1.description'] = 'Va anadir multiples sistemas de pago conectados.';
 
 // Potentially shared keys
-$_lang['commerce_gatewayspack1.secret'] = 'Secret';
+$_lang['commerce_gatewayspack1.secret'] = 'Segredo';
 
 /* Adyen Hosted Payment Page */
-$_lang['commerce_gatewayspack1.adyenhpp.secret_desc'] = 'The HMAC Key for the chosen platform (test or live) as managed in the Adyen dashboard under Skins.';
-$_lang['commerce_gatewayspack1.adyenhpp.merchant_account'] = 'Merchant Account';
-$_lang['commerce_gatewayspack1.adyenhpp.merchant_account_desc'] = 'The name of the merchant account the skin is enabled for. This can be seen when editing a skin in the Adyen dashboard, under the "Valid Accounts" header.';
-$_lang['commerce_gatewayspack1.adyenhpp.skin_code'] = 'Skin Code';
-$_lang['commerce_gatewayspack1.adyenhpp.skin_code_desc'] = 'The unique code of the skin you\'d like to use.';
+$_lang['commerce_gatewayspack1.adyenhpp.secret_desc'] = 'El Clave HMAC de la platforma eligida (test o live) como son administrados en la tabla central Adyen de Skins.';
+$_lang['commerce_gatewayspack1.adyenhpp.merchant_account'] = 'Cuenta de Mercante';
+$_lang['commerce_gatewayspack1.adyenhpp.merchant_account_desc'] = 'El nombre de cuentas de mercantes para cuales el skin es activado. Puede ver esto editando un skin en la tabla central Adyen, bajo del titulo \'\'Cuentas Validas\'\'.';
+$_lang['commerce_gatewayspack1.adyenhpp.skin_code'] = 'Codigo Skin';
+$_lang['commerce_gatewayspack1.adyenhpp.skin_code_desc'] = 'El unico codigo del skin que puede utilizar.';
