@@ -5,6 +5,7 @@ namespace modmore\Commerce\GatewaysPack1\Gateways;
 use modmore\Commerce\Admin\Widgets\Form\PasswordField;
 use modmore\Commerce\Admin\Widgets\Form\TextField;
 use modmore\Commerce\Gateways\BaseGateway;
+use modmore\Commerce\GatewaysPack1\Fields\AdyenContextOptions;
 
 class AdyenHPP extends BaseGateway {
     protected $omnipayGateway = 'Adyen';
@@ -33,6 +34,13 @@ class AdyenHPP extends BaseGateway {
             'label' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.skin_code'),
             'description' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.skin_code_desc'),
             'value' => $method->getProperty('skinCode'),
+        ]);
+
+        $fields[] = new AdyenContextOptions($this->commerce, [
+            'name' => 'properties[contexts]',
+            'label' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.contexts'),
+            'description' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.contexts_desc'),
+            'value' => $method->getProperty('contexts'),
         ]);
 
         return $fields;

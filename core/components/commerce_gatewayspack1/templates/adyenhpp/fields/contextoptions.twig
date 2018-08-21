@@ -1,0 +1,34 @@
+<div class="horizontal field {% if field.hasErrors() %}error{% endif %} commerce-field-adyenhpp-contextoptions">
+    <label for="{{ field.key }}-{{ field.name }}-date">{{ field.label }}</label>
+    {% set idx = 0 %}
+    <div class="field-item-row-container">
+        {% for ctx in contexts %}
+            <div class="field-item-row">
+                <div class="three fields">
+                    <div class="field field-context">
+                        <b>{{ ctx.name }}</b>
+                        {% if ctx.name != ctx.key %}({{ ctx.key }}){% endif %}
+                    </div>
+                    <div class="field field-merchant-account">
+                        <label for="{{ field.key }}-{{ field.name }}-merchant-{{ idx }}">{{ lex('commerce_gatewayspack1.adyenhpp.merchant_account') }}</label>
+                        <input id="{{ field.key }}-{{ field.name }}-merchant-{{ idx }}" name="{{ field.name }}[{{ ctx.key }}][merchantAccount]" type="text" value="{{ field.valueAsArray[ctx.key]['merchantAccount'] }}">
+                    </div>
+
+                    <div class="field field-secret">
+                        <label for="{{ field.key }}-{{ field.name }}-secret-{{ idx }}">{{ lex('commerce_gatewayspack1.secret') }}</label>
+                        <input id="{{ field.key }}-{{ field.name }}-secret-{{ idx }}" name="{{ field.name }}[{{ ctx.key }}][secret]" type="password" value="{{ field.valueAsArray[ctx.key]['merchantAccount'] }}">
+                    </div>
+
+                    <div class="field field-skin-code">
+                        <label for="{{ field.key }}-{{ field.name }}-skin-code-{{ idx }}">{{ lex('commerce_gatewayspack1.adyenhpp.skin_code') }}</label>
+                        <input id="{{ field.key }}-{{ field.name }}-skin-code-{{ idx }}" name="{{ field.name }}[{{ ctx.key }}][skinCode]" type="text" value="{{ field.valueAsArray[ctx.key]['skinCode'] }}">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if field.description %}<p class="help">{{ field.description }}</p>{% endif %}
+
+    {% include "admin/widgets/fields/_errors.twig" %}
+</div>
