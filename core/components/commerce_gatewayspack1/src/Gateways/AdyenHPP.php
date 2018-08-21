@@ -6,10 +6,32 @@ use modmore\Commerce\Admin\Widgets\Form\PasswordField;
 use modmore\Commerce\Admin\Widgets\Form\TextField;
 use modmore\Commerce\Gateways\BaseGateway;
 use modmore\Commerce\GatewaysPack1\Fields\AdyenContextOptions;
+use Omnipay\Adyen\Gateway;
 
 class AdyenHPP extends BaseGateway {
     protected $omnipayGateway = 'Adyen';
 
+    public function __construct(\Commerce $commerce, \comPaymentMethod $method)
+    {
+        parent::__construct($commerce, $method);
+        if ($this->instance instanceof Gateway) {
+
+            // Override the different configuration values from the context overrides for the current context
+            $ctx = $this->commerce->wctx ? $this->commerce->wctx->get('key') : null;
+            $contexts = $this->getProperty('contexts');
+            if ($ctx !== null && array_key_exists($ctx, $contexts)) {
+                if ((string)$contexts[$ctx]['secret'] !== '') {
+                    $this->instance->setSecret($contexts[$ctx]['secret']);
+                }
+                if ((string)$contexts[$ctx]['skinCode'] !== '') {
+                    $this->instance->setSkinCode($contexts[$ctx]['skinCode']);
+                }
+                if ((string)$contexts[$ctx]['merchantAccount'] !== '') {
+                    $this->instance->setMerchantAccount($contexts[$ctx]['merchantAccount']);
+                }
+            }
+        }
+    }
 
     public function getGatewayProperties(\comPaymentMethod $method)
     {

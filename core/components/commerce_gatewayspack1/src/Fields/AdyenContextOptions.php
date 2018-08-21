@@ -11,20 +11,6 @@ class AdyenContextOptions extends Field
         return is_array($value);
     }
 
-    public function setValue($value)
-    {
-        if (is_array($value)) {
-            foreach ($value as $k => $item) {
-                if (empty($item['merchantAccount']) || empty($item['secret']) || empty($item['skinCode'])) {
-                    unset($value[$k]);
-                }
-            }
-        }
-        $this->value = $value;
-
-        return $this;
-    }
-
     public function getHTML()
     {
         $c = $this->adapter->newQuery('modContext');
