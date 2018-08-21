@@ -11,6 +11,12 @@ class AdyenContextOptions extends Field
         return is_array($value);
     }
 
+    public function setValue($value)
+    {
+        $this->value = $value;
+        return $this;
+    }
+
     public function getHTML()
     {
         $c = $this->adapter->newQuery('modContext');
