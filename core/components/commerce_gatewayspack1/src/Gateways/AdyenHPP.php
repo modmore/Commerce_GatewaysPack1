@@ -44,18 +44,18 @@ class AdyenHPP extends BaseGateway {
             'value' => $method->getProperty('merchantAccount'),
         ]);
 
-        $fields[] = new PasswordField($this->commerce, [
-            'name' => 'properties[secret]',
-            'label' => $this->adapter->lexicon('commerce_gatewayspack1.secret'),
-            'description' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.secret_desc'),
-            'value' => $method->getProperty('secret'),
-        ]);
-
         $fields[] = new TextField($this->commerce, [
             'name' => 'properties[skinCode]',
             'label' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.skin_code'),
             'description' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.skin_code_desc'),
             'value' => $method->getProperty('skinCode'),
+        ]);
+
+        $fields[] = new PasswordField($this->commerce, [
+            'name' => 'properties[secret]',
+            'label' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.secret'),
+            'description' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.secret_desc'),
+            'value' => $method->getProperty('secret'),
         ]);
 
         $fields[] = new AdyenContextOptions($this->commerce, [

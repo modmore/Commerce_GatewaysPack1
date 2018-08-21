@@ -14,14 +14,14 @@
                         <input id="{{ field.key }}-{{ field.name }}-merchant-{{ idx }}" name="{{ field.name }}[{{ ctx.key }}][merchantAccount]" type="text" value="{{ field.valueAsArray[ctx.key]['merchantAccount'] }}">
                     </div>
 
-                    <div class="field field-secret">
-                        <label for="{{ field.key }}-{{ field.name }}-secret-{{ idx }}">{{ lex('commerce_gatewayspack1.secret') }}</label>
-                        <input id="{{ field.key }}-{{ field.name }}-secret-{{ idx }}" name="{{ field.name }}[{{ ctx.key }}][secret]" type="password" value="{{ field.valueAsArray[ctx.key]['merchantAccount'] }}">
-                    </div>
-
                     <div class="field field-skin-code">
                         <label for="{{ field.key }}-{{ field.name }}-skin-code-{{ idx }}">{{ lex('commerce_gatewayspack1.adyenhpp.skin_code') }}</label>
                         <input id="{{ field.key }}-{{ field.name }}-skin-code-{{ idx }}" name="{{ field.name }}[{{ ctx.key }}][skinCode]" type="text" value="{{ field.valueAsArray[ctx.key]['skinCode'] }}">
+                    </div>
+
+                    <div class="field field-secret">
+                        <label for="{{ field.key }}-{{ field.name }}-secret-{{ idx }}">{{ lex('commerce_gatewayspack1.adyenhpp.secret') }}</label>
+                        <input id="{{ field.key }}-{{ field.name }}-secret-{{ idx }}" name="{{ field.name }}[{{ ctx.key }}][secret]" type="password" value="{{ field.valueAsArray[ctx.key]['merchantAccount'] }}">
                     </div>
                 </div>
             </div>

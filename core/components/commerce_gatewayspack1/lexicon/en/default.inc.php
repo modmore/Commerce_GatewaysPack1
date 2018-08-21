@@ -7,6 +7,7 @@ $_lang['commerce_gatewayspack1.description'] = 'Adds additional payment gateways
 $_lang['commerce_gatewayspack1.secret'] = 'Secret';
 
 /* Adyen Hosted Payment Page */
+$_lang['commerce_gatewayspack1.adyenhpp.secret'] = 'HMAC Key';
 $_lang['commerce_gatewayspack1.adyenhpp.secret_desc'] = 'The HMAC Key for the chosen platform (test or live) as managed in the Adyen dashboard under Skins.';
 $_lang['commerce_gatewayspack1.adyenhpp.merchant_account'] = 'Merchant Account';
 $_lang['commerce_gatewayspack1.adyenhpp.merchant_account_desc'] = 'The name of the merchant account the skin is enabled for. This can be seen when editing a skin in the Adyen dashboard, under the "Valid Accounts" header.';
