@@ -21,7 +21,7 @@
 
                     <div class="field field-secret">
                         <label for="{{ field.key }}-{{ field.name }}-secret-{{ idx }}">{{ lex('commerce_gatewayspack1.adyenhpp.secret') }}</label>
-                        <input id="{{ field.key }}-{{ field.name }}-secret-{{ idx }}" name="{{ field.name }}[{{ ctx.key }}][secret]" type="password" value="{{ field.valueAsArray[ctx.key]['merchantAccount'] }}">
+                        <input id="{{ field.key }}-{{ field.name }}-secret-{{ idx }}" name="{{ field.name }}[{{ ctx.key }}][secret]" type="password" value="{{ field.valueAsArray[ctx.key]['secret'] }}">
                     </div>
                 </div>
             </div>
