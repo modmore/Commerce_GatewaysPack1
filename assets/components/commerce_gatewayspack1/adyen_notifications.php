@@ -107,7 +107,8 @@ foreach ($body['notificationItems'] as $i => $item) {
     'Adyen'
     );
 
-    if ($innerItem['eventCode'] === 'AUTHORISATION') {
+    $handleAuthorisations = $modx->getOption('commerce_gatewayspack1.adyen.handle_auth_in_notification', null, false);
+    if ($handleAuthorisations && $innerItem['eventCode'] === 'AUTHORISATION') {
         $transactionId = (int)$innerItem['merchantReference'];
         $transaction = $modx->getObject('comTransaction', [
             'test' => $commerce->isTestMode(),
@@ -186,7 +187,7 @@ foreach ($body['notificationItems'] as $i => $item) {
     }
     else {
         $modx->log(modX::LOG_LEVEL_INFO,
-            'Unsupported eventCode ' . $innerItem['eventCode'],
+            'Unhandled eventCode ' . $innerItem['eventCode'],
             '',
             '',
             'Adyen'
