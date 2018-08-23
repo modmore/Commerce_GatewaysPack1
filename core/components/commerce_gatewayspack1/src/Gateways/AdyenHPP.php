@@ -58,6 +58,13 @@ class AdyenHPP extends BaseGateway {
             'value' => $method->getProperty('secret'),
         ]);
 
+        $fields[] = new PasswordField($this->commerce, [
+            'name' => 'properties[notification_hmac]',
+            'label' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.notification_hmac'),
+            'description' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.notification_hmac_desc'),
+            'value' => $method->getProperty('notification_hmac'),
+        ]);
+
         $fields[] = new AdyenContextOptions($this->commerce, [
             'name' => 'properties[contexts]',
             'label' => $this->adapter->lexicon('commerce_gatewayspack1.adyenhpp.contexts'),
@@ -98,5 +105,35 @@ class AdyenHPP extends BaseGateway {
             }
         }
         return $options;
+    }
+
+    public static function calculateSha256Signature($hmacKey, $params)
+    {
+        // validate if hmacKey is provided
+        if (empty($hmacKey)) {
+            throw new \RuntimeException('You did not provide a HMAC key');
+        }
+
+        // validate if hmacKey contains only hexadecimal chars to be packed with H*
+        if (!ctype_xdigit($hmacKey)) {
+            throw new RuntimeException("Invalid HMAC key: $hmacKey");
+        }
+
+        if (empty($params)) {
+            throw new RuntimeException('You did not provide any parameters');
+        }
+
+        // The character escape function
+        $escapeval = function ($val) {
+            return str_replace(':', '\\:', str_replace('\\', '\\\\', $val));
+        };
+
+
+        // Generate the signing data string
+        $signData = implode(":", array_map($escapeval, array_values($params)));
+
+        // base64-encode the binary result of the HMAC computation
+        $merchantSig = base64_encode(hash_hmac('sha256', $signData, pack("H*", $hmacKey), true));
+        return $merchantSig;
     }
 }
