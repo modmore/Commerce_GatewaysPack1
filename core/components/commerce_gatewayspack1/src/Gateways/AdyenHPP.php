@@ -82,6 +82,21 @@ class AdyenHPP extends BaseGateway {
                 $options['shopperReference'] = $billing->get('user');
             }
         }
+
+        // Override the different configuration values from the context overrides for the current context
+        $ctx = $this->commerce->wctx ? $this->commerce->wctx->get('key') : null;
+        $contexts = $this->getProperty('contexts');
+        if ($ctx !== null && array_key_exists($ctx, $contexts)) {
+            if ((string)$contexts[$ctx]['secret'] !== '') {
+                $options['secret'] = $contexts[$ctx]['secret'];
+            }
+            if ((string)$contexts[$ctx]['skinCode'] !== '') {
+                $options['skinCode'] = $contexts[$ctx]['skinCode'];
+            }
+            if ((string)$contexts[$ctx]['merchantAccount'] !== '') {
+                $options['merchantAccount'] = $contexts[$ctx]['merchantAccount'];
+            }
+        }
         return $options;
     }
 }
