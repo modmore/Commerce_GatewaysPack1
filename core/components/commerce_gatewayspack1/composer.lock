@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Mark-H/omnipay-adyen.git",
-                "reference": "3d89d3456e19a97d7ccefac91a4929f00f5a3ff5"
+                "reference": "99d21e0a9d58a9a757fa9d396db9986987e2907b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Mark-H/omnipay-adyen/zipball/3d89d3456e19a97d7ccefac91a4929f00f5a3ff5",
-                "reference": "3d89d3456e19a97d7ccefac91a4929f00f5a3ff5",
+                "url": "https://api.github.com/repos/Mark-H/omnipay-adyen/zipball/99d21e0a9d58a9a757fa9d396db9986987e2907b",
+                "reference": "99d21e0a9d58a9a757fa9d396db9986987e2907b",
                 "shasum": ""
             },
             "require": {
@@ -70,7 +70,7 @@
             "support": {
                 "source": "https://github.com/Mark-H/omnipay-adyen/tree/completepurchaseresponse"
             },
-            "time": "2018-08-21T23:54:30+00:00"
+            "time": "2018-08-28T13:52:33+00:00"
         }
     ],
     "packages-dev": [],
