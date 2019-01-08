@@ -1,8 +1,8 @@
 <?php
 
 return [
-//    'some_setting' => [
-//        'area' => 'general',
-//        'value' => 'some_value',
-//    ],
+    'adyen.handle_via_auth' => [
+        'area' => 'Adyen',
+        'value' => false,
+    ],
 ];

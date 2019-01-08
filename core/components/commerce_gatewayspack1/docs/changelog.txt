@@ -1,3 +1,5 @@
+- Rename "commerce_gatewayspack1.adyen.handle_auth_in_notification" setting to "commerce_gatewayspack1.adyen.handle_via_auth" as it was too long [S18883]
+
 ++ GatewaysPack1 for Commerce 1.1.0-pl
 ++ Released on 2018-08-28
 ++++++++++++++++++++++++++
