@@ -1,25 +1,29 @@
 - Rename "commerce_gatewayspack1.adyen.handle_auth_in_notification" setting to "commerce_gatewayspack1.adyen.handle_via_auth" as it was too long [S18883]
 
-++ GatewaysPack1 for Commerce 1.1.0-pl
-++ Released on 2018-08-28
-++++++++++++++++++++++++++
+GatewaysPack1 for Commerce 1.1.0-pl
+-----------------------------------
+Released on 2018-08-28
+
 - Add loading of the transaction reference from the payment response
 
-++ GatewaysPack1 for Commerce 1.1.0-rc2
-++ Released on 2018-08-28
-++++++++++++++++++++++++++
+GatewaysPack1 for Commerce 1.1.0-rc2
+------------------------------------
+Released on 2018-08-28
+
 - Fix new assets folder being missing from transport package
 
-++ GatewaysPack1 for Commerce 1.1.0-rc1
-++ Released on 2018-08-23
-++++++++++++++++++++++++++
+GatewaysPack1 for Commerce 1.1.0-rc1
+------------------------------------
+Released on 2018-08-23
+
 - Add context specific overrides for skin/merchant/HMAC key
 - Fix transaction state detection (pending/cancelled); works best with Commerce 0.11.2+
 - Add endpoint (assets/components/commerce_gatewayspack1/adyen_notifications.php) that can accept HMAC signed Notifications
 
 This release has been sponsored by Adwise - thank you!
 
-++ GatewaysPack1 for Commerce 1.0.0-pl
-++ Released on 2018-02-02
-++++++++++++++++++++++++++
+GatewaysPack1 for Commerce 1.0.0-pl
+-----------------------------------
+Released on 2018-02-02
+
 - First release
