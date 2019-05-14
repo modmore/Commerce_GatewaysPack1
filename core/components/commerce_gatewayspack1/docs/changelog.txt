@@ -1,3 +1,5 @@
+- Prevent "PHP warning: array_key_exists() expects parameter 2 to be array, null given" when no contexts info is set
+
 GatewaysPack1 for Commerce 1.1.1-pl
 -----------------------------------
 Released on 2019-01-08

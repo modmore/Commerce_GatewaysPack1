@@ -19,7 +19,7 @@ class AdyenHPP extends BaseGateway {
             // Override the different configuration values from the context overrides for the current context
             $ctx = $this->commerce->wctx ? $this->commerce->wctx->get('key') : null;
             $contexts = $this->getProperty('contexts');
-            if ($ctx !== null && array_key_exists($ctx, $contexts)) {
+            if ($ctx !== null && is_array($contexts) && array_key_exists($ctx, $contexts)) {
                 if ((string)$contexts[$ctx]['secret'] !== '') {
                     $this->instance->setSecret($contexts[$ctx]['secret']);
                 }
