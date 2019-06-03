@@ -115,11 +115,11 @@ class AdyenHPP extends BaseGateway {
 
         // validate if hmacKey contains only hexadecimal chars to be packed with H*
         if (!ctype_xdigit($hmacKey)) {
-            throw new RuntimeException("Invalid HMAC key: $hmacKey");
+            throw new \RuntimeException("Invalid HMAC key: $hmacKey");
         }
 
         if (empty($params)) {
-            throw new RuntimeException('You did not provide any parameters');
+            throw new \RuntimeException('You did not provide any parameters');
         }
 
         // The character escape function
