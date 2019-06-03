@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba867747e375d98f329f4e34d72a66d6",
+    "content-hash": "dafed916af1bf77491315bc0c99568e4",
     "packages": [
         {
             "name": "nilvola/omnipay-adyen",
-            "version": "dev-completepurchaseresponse",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Mark-H/omnipay-adyen.git",
-                "reference": "99d21e0a9d58a9a757fa9d396db9986987e2907b"
+                "url": "https://github.com/MujibAzizi/omnipay-adyen.git",
+                "reference": "3042e2c63d3163a0f6b48d48900f6e33c45c097b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Mark-H/omnipay-adyen/zipball/99d21e0a9d58a9a757fa9d396db9986987e2907b",
-                "reference": "99d21e0a9d58a9a757fa9d396db9986987e2907b",
+                "url": "https://api.github.com/repos/MujibAzizi/omnipay-adyen/zipball/3042e2c63d3163a0f6b48d48900f6e33c45c097b",
+                "reference": "3042e2c63d3163a0f6b48d48900f6e33c45c097b",
                 "shasum": ""
             },
             "require": {
@@ -32,14 +32,11 @@
                     "Omnipay\\Adyen\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
-                {
-                    "name": "Mujib Azizi",
-                    "email": "mujib@nilvola.nl"
-                },
                 {
                     "name": "Adrian Macneil",
                     "email": "adrian@adrianmacneil.com"
@@ -51,6 +48,10 @@
                 {
                     "name": "PeoplePerHour",
                     "homepage": "http://www.peopleperhour.com"
+                },
+                {
+                    "name": "Mujib Azizi",
+                    "email": "mujib@nilvola.nl"
                 },
                 {
                     "name": "Mark Kremer",
@@ -67,18 +68,13 @@
                 "pay",
                 "payment"
             ],
-            "support": {
-                "source": "https://github.com/Mark-H/omnipay-adyen/tree/completepurchaseresponse"
-            },
-            "time": "2018-08-28T13:52:33+00:00"
+            "time": "2019-01-22T09:26:53+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "nilvola/omnipay-adyen": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
