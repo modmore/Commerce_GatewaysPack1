@@ -15,7 +15,6 @@ class AdyenHPP extends BaseGateway {
     {
         parent::__construct($commerce, $method);
         if ($this->instance instanceof Gateway) {
-
             // Override the different configuration values from the context overrides for the current context
             $ctx = $this->commerce->wctx ? $this->commerce->wctx->get('key') : null;
             $contexts = $this->getProperty('contexts');
@@ -85,9 +84,9 @@ class AdyenHPP extends BaseGateway {
         if ($billing = $this->order->getBillingAddress()) {
             $options['shopperEmail'] = $billing->get('email');
             $options['countryCode'] = $billing->get('country');
-            if ($billing->get('user') > 0) {
-                $options['shopperReference'] = $billing->get('user');
-            }
+        }
+        if ($this->order->get('user') > 0) {
+            $options['shopperReference'] = $this->order->get('user');
         }
 
         // Override the different configuration values from the context overrides for the current context
