@@ -77,7 +77,12 @@ class AdyenHPP extends BaseGateway {
     public function preparePurchaseOptions(array $options = [])
     {
         $options = parent::preparePurchaseOptions($options);
-        $options['merchantReference'] = $this->transaction->get('id');
+
+        $idOrRef = $this->order->get('reference');
+        if (empty($idOrRef)) {
+            $idOrRef = '#' . $this->order->get('id');
+        }
+        $options['merchantReference'] = $idOrRef . '-' . $this->transaction->get('id');
         $options['sessionValidity'] = date('c', time() + $this->adapter->getOption('session_cookie_lifetime'));
         $options['shipBeforeDate'] = date('c', time() + $this->adapter->getOption('session_cookie_lifetime'));
 

@@ -109,7 +109,8 @@ foreach ($body['notificationItems'] as $i => $item) {
 
     $handleAuthorisations = $modx->getOption('commerce_gatewayspack1.adyen.handle_via_auth', null, false);
     if ($handleAuthorisations && $innerItem['eventCode'] === 'AUTHORISATION') {
-        $transactionId = (int)$innerItem['merchantReference'];
+        $ref = explode('-', $innerItem['merchantReference']); // ORDER-TRANSACTION
+        $transactionId = end($ref); // using end() instead of $ref[1] to avoid issues where the order ref includes a dash
         $transaction = $modx->getObject('comTransaction', [
             'test' => $commerce->isTestMode(),
             'id' => $transactionId,
