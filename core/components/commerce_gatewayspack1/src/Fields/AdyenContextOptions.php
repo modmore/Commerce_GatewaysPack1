@@ -28,7 +28,7 @@ class AdyenContextOptions extends Field
         foreach ($this->adapter->getIterator('modContext', $c) as $context) {
             $ctxs[] = $context->get(['key', 'name']);
         }
-        return $this->commerce->twig->render('adyenhpp/fields/contextoptions.twig', ['field' => $this, 'contexts' => $ctxs]);
+        return $this->commerce->view()->render('adyenhpp/fields/contextoptions.twig', ['field' => $this, 'contexts' => $ctxs]);
     }
 
     public function getValueAsArray()
