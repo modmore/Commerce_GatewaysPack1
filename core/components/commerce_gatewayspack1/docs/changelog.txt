@@ -1,3 +1,5 @@
+- Upgrade usage of Commerce::$twig to Commerce::view(), bumping minimum to Commerce 1.1+
+
 GatewaysPack1 for Commerce 1.2.0-pl
 -----------------------------------
 Released on 2019-06-03
